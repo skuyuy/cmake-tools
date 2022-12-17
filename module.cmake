@@ -10,10 +10,12 @@
 #
 # include(.../module.cmake)
 
-message(STATUS "Configuring modle: ${MODULE_NAME}")
+message(STATUS "Configuring module: ${MODULE_NAME}")
 
 add_library(${MODULE_NAME})
 target_sources(${MODULE_NAME} PRIVATE ${MODULE_SOURCE})
 target_include_directories(${MODULE_NAME} PUBLIC ${MODULE_INCLUDE})
-target_compile_definitions(${MODULE_NAME} PUBLIC ${MODULE_DEFINITIONS})
+target_compile_definitions(${MODULE_NAME} PUBLIC 
+    MODULE_NAME="${MODULE_NAME}"
+    ${MODULE_DEFINITIONS})
 target_link_libraries(${MODULE_NAME} PRIVATE ${MODULE_LINK})
