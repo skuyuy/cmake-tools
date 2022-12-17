@@ -10,7 +10,7 @@
 #
 # include(.../module.cmake)
 
-message(STATUS "Configuring modle: ${MODULE_NAME}")
+message(STATUS "Configuring module: ${MODULE_NAME}")
 
 add_library(${MODULE_NAME})
 target_sources(${MODULE_NAME} PRIVATE ${MODULE_SOURCE})
